@@ -1,0 +1,148 @@
+/* Main container */
+.cart-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* dark background */
+  color: #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  /* border: 0.1px solid rgb(108, 6, 251); */
+}
+
+/* Titles */
+.cart-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* Divider */
+.divider {
+  border: 0;
+  height: 1px;
+  background: #333;
+  margin: 25px 0;
+}
+
+/* Products list */
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.product-card {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.product-price {
+  color: #bbbbbb;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: #ffffff;
+}
+
+.remove-btn:hover {
+  background-color: #e53935;
+}
+
+.clear-btn {
+  background-color: #ff9800;
+  color: #ffffff;
+  margin-top: 15px;
+}
+
+.clear-btn:hover {
+  background-color: #fb8c00;
+}
+
+/* Cart items */
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-item {
+  background-color: #1e1e1e;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Summary */
+.cart-summary {
+  margin-top: 20px;
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.cart-summary p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+/* Empty cart */
+.empty-cart {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
