@@ -3,8 +3,6 @@ import { songs } from "../data/data.js";
 
 const idx = Math.floor(Math.random() * songs.length);
 
-console.log(songs);
-
 const initialState = {
   isPlaying: false,
   currentSong: {
@@ -19,7 +17,19 @@ const initialState = {
 const playerSlice = createSlice({
   name: "player",
   initialState,
-  reducers: {},
+  reducers: {
+    setCurrentSong: (state, action) => {
+      state.currentSong = action.payload;
+      state.isPlaying = true;
+    },
+    pause: (state) => {
+      state.isPlaying = false;
+    },
+    play: (state) => {
+      state.isPlaying = true;
+    },
+  },
 });
 
+export const { play, pause, setCurrentSong } = playerSlice.actions;
 export default playerSlice.reducer;
