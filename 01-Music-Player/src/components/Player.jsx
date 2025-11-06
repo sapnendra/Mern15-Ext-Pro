@@ -1,12 +1,15 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { play, pause } from "../features/playerSlice";
+import { play, pause, next, prev } from "../features/playerSlice";
 
 const Player = () => {
   const { isPlaying, currentSong } = useSelector((state) => state.player);
 
   const audioRef = useRef(null);
   const dispatch = useDispatch();
+
+  console.log(next);
+  console.log(prev);
 
   const playPause = () => {
     if (isPlaying) {

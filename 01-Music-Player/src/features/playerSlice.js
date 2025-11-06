@@ -28,6 +28,12 @@ const playerSlice = createSlice({
     play: (state) => {
       state.isPlaying = true;
     },
+    next: (state, action) => {
+      console.log(state, action.payload);
+    },
+    prev: (state, action) => {
+      console.log(state, action.payload);
+    },
   },
 });
 
