@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   selectCurrentSong,
   selectPlaying,
@@ -7,31 +7,31 @@ import {
   pause,
   next,
   prev,
-} from '../features/player/playerSlice'
+} from "../features/player/playerSlice";
 
 const Player = () => {
-  const current = useSelector(selectCurrentSong)
-  const playing = useSelector(selectPlaying)
-  const dispatch = useDispatch()
-  const audioRef = useRef(null)
+  const current = useSelector(selectCurrentSong);
+  const playing = useSelector(selectPlaying);
+  const dispatch = useDispatch();
+  const audioRef = useRef(null);
 
   useEffect(() => {
-    if (!audioRef.current) return
+    if (!audioRef.current) return;
     if (playing) {
-      audioRef.current.play().catch(() => {})
+      audioRef.current.play().catch(() => {});
     } else {
-      audioRef.current.pause()
+      audioRef.current.pause();
     }
-  }, [playing, current])
+  }, [playing, current]);
 
   useEffect(() => {
     // auto play when current changes
-    if (!audioRef.current) return
-    audioRef.current.load()
-    if (playing) audioRef.current.play().catch(() => {})
-  }, [current, playing])
+    if (!audioRef.current) return;
+    audioRef.current.load();
+    if (playing) audioRef.current.play().catch(() => {});
+  }, [current, playing]);
 
-  if (!current) return null
+  if (!current) return null;
 
   return (
     <div className="p-4 bg-white rounded shadow">
@@ -76,7 +76,7 @@ const Player = () => {
         Your browser does not support the audio element.
       </audio>
     </div>
-  )
-}
+  );
+};
 
-export default Player
+export default Player;
