@@ -18,7 +18,7 @@ export const songs = [
     title: "Cheque",
     artist: "Shubh",
     img: "https://images.unsplash.com/photo-1530014671970-707f86eb10f5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
-    songUrl: "./music/cheque.mp3"
+    songUrl: "./music/cheques.mp3"
   },
   {
     id: 3,
@@ -32,6 +32,6 @@ export const songs = [
     title: "Tujh Bin",
     artist: "Don't know",
     img: "https://images.unsplash.com/photo-1499415479124-43c32433a620?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1632",
-    songUrl: "./music/heymama.mp3"
+    songUrl: "./music/tujhbin.mp3"
   }
 ];

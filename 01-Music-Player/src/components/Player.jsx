@@ -8,15 +8,20 @@ const Player = () => {
   const audioRef = useRef(null);
   const dispatch = useDispatch();
 
-  console.log(next);
-  console.log(prev);
-
   const playPause = () => {
     if (isPlaying) {
       dispatch(pause());
     } else {
       dispatch(play());
     }
+  };
+
+  const nextSong = (song) => {
+    dispatch(next(song));
+  };
+
+  const prevSong = (song) => {
+    dispatch(prev(song));
   };
 
   useEffect(() => {
@@ -26,25 +31,37 @@ const Player = () => {
   return (
     <>
       <div className="w-full bg-white rounded-lg p-8">
-        <div className="mb-4 w-5/12 mx-auto">
-          <img className="rounded-lg" src={currentSong?.img} alt="Song Image" />
+        <div className="mb-4 w-2/12 mx-auto">
+          <img
+            className="rounded-lg h-30 w-50 object-cover"
+            src={currentSong?.img}
+            alt="Song Image"
+          />
         </div>
-        <div className="flex items-center justify-between p-8 bg-gray-200 rounded-lg">
+        <div className="flex items-center justify-between py-8 px-4 bg-gray-200 rounded-lg">
           <div className="flex flex-col">
             <h4 className="text-xl font-semibold">{currentSong?.title}</h4>
-            <p className="text-lg text-gray-500">{currentSong?.artist}</p>
+            <p className="text-sm text-gray-500">{currentSong?.artist}</p>
           </div>
           <div>
-            <button className="cursor-pointer bg-green-500 text-white text-xl py-2 px-6 font-semibold mr-3 rounded-lg">
+            <button
+              onClick={() => prevSong(currentSong)}
+              className="cursor-pointer bg-green-500 text-white text-xl py-2 px-6 font-semibold mr-3 rounded-lg"
+            >
               Prev
             </button>
             <button
-              onClick={playPause}
+              onClick={() => {
+                playPause();
+              }}
               className="cursor-pointer bg-red-500 text-white text-xl py-2 px-6 font-semibold mr-3 rounded-lg"
             >
               {isPlaying ? "Pause" : "Play"}
             </button>
-            <button className="cursor-pointer bg-green-500 text-white text-xl py-2 px-6 font-semibold mr-3 rounded-lg">
+            <button
+              onClick={() => nextSong(currentSong)}
+              className="cursor-pointer bg-green-500 text-white text-xl py-2 px-6 font-semibold mr-3 rounded-lg"
+            >
               Next
             </button>
           </div>

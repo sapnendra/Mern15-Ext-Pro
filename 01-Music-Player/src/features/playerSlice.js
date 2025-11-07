@@ -5,6 +5,7 @@ const idx = Math.floor(Math.random() * songs.length);
 
 const initialState = {
   isPlaying: false,
+  songs: songs,
   currentSong: {
     id: songs[idx].id,
     title: songs[idx].title,
@@ -28,11 +29,29 @@ const playerSlice = createSlice({
     play: (state) => {
       state.isPlaying = true;
     },
-    next: (state, action) => {
-      console.log(state, action.payload);
+    next: (state) => {
+      const idx = state.songs.findIndex((s) => s.id === state.currentSong.id);
+      const nextSong = state.songs[(idx + 1) % state.songs.length];
+
+      state.currentSong = {
+        id: nextSong.id,
+        title: nextSong.title,
+        artist: nextSong.artist,
+        img: nextSong.img,
+        songUrl: nextSong.songUrl,
+      };
     },
-    prev: (state, action) => {
-      console.log(state, action.payload);
+    prev: (state) => {
+      const idx = state.songs.findIndex((s) => s.id === state.currentSong.id);
+      const prevSong =
+        state.songs[(idx - 1 + state.songs.length) % state.songs.length];
+      state.currentSong = {
+        id: prevSong.id,
+        title: prevSong.title,
+        artist: prevSong.artist,
+        img: prevSong.img,
+        songUrl: prevSong.songUrl,
+      };
     },
   },
 });
