@@ -30,7 +30,9 @@ const playerSlice = createSlice({
       state.isPlaying = true;
     },
     next: (state) => {
-      const idx = state.songs.findIndex((song) => song.id === state.currentSong.id);
+      const idx = state.songs.findIndex(
+        (song) => song.id === state.currentSong.id
+      );
       const nextSong = state.songs[(idx + 1) % state.songs.length];
 
       state.currentSong = {
@@ -41,9 +43,11 @@ const playerSlice = createSlice({
         songUrl: nextSong.songUrl,
       };
     },
-    
+
     prev: (state) => {
-      const idx = state.songs.findIndex((song) => song.id === state.currentSong.id);
+      const idx = state.songs.findIndex(
+        (song) => song.id === state.currentSong.id
+      );
       const prevSong =
         state.songs[(idx - 1 + state.songs.length) % state.songs.length];
       state.currentSong = {
